@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>APEX ELITE - Cart</title>
+
+    <link
+        rel="stylesheet"
+        href="css/cart.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/cartNavbar.css"
+    >
+
+</head>
+
+<body>
+
+    <div id="nav"></div>
+
+    <main id="main">
+
+        <div class="bread">
+            Home › Cart
+        </div>
+
+        <div class="title">
+
+            <h1>
+                SHOPPING CART
+            </h1>
+
+            <span id="cartCount">
+                0 Items in your bag
+            </span>
+
+        </div>
+
+        <section id="cart">
+
+            <div id="products"></div>
+
+            <div id="summary">
+
+                <h3>
+                    ORDER SUMMARY
+                </h3>
+
+                <div class="row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <span id="subtotal">
+                        $0.00
+                    </span>
+
+                </div>
+
+                <div class="row">
+
+                    <span>
+                        Standard Shipping
+                    </span>
+
+                    <span>
+                        FREE
+                    </span>
+
+                </div>
+
+                <div class="row">
+
+                    <span>
+                        Estimated Tax
+                    </span>
+
+                    <span id="tax">
+                        $0.00
+                    </span>
+
+                </div>
+
+                <label>
+                    PROMO CODE
+                </label>
+
+                <div class="promo">
+
+                    <input
+                        type="text"
+                        placeholder="Enter code"
+                    >
+
+                    <button>
+                        APPLY
+                    </button>
+
+                </div>
+
+                <div class="total">
+
+                    <span>
+                        GRAND TOTAL
+                    </span>
+
+                    <b id="total">
+                        $0.00
+                    </b>
+
+                </div>
+
+                <button class="checkout">
+                    PROCEED TO CHECKOUT →
+                </button>
+
+                <a
+                    href="index.html"
+                    class="continue"
+                >
+                    CONTINUE SHOPPING
+                </a>
+
+                <div class="pay">
+                    ▣ &nbsp; ▣ &nbsp; ◇
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="like">
+
+            <div class="like-title">
+
+                <h3>
+                    YOU MAY ALSO LIKE
+                </h3>
+
+                <div class="arrows">
+
+                    <button>‹</button>
+
+                    <button>›</button>
+
+                </div>
+
+            </div>
+
+            <div
+                class="cards"
+                id="recommendedProducts"
+            ></div>
+
+        </section>
+
+    </main>
+
+    <div id="foot"></div>
+
+    <script src="js/cart.js"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

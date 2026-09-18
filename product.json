@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "HERITAGE X-90",
+    "category": "PERFORMANCE SERIES",
+    "price": 210,
+    "description": "A powerful performance shoe designed for comfort and everyday movement.",
+    "image": "assets/images/APEX ELITE Aurum Performance.png",
+    "rating": 4.5,
+    "reviews": 120,
+    "colors": ["black", "white"]
+  },
+  {
+    "id": 2,
+    "name": "PULSE REACT",
+    "category": "RUNNING SERIES",
+    "price": 195,
+    "description": "Lightweight running shoes with responsive cushioning and excellent comfort.",
+    "image": "assets/images/Pulse React.png",
+    "rating": 4.7,
+    "reviews": 150,
+    "colors": ["red", "black"]
+  },
+  {
+    "id": 3,
+    "name": "AURA CLOUD",
+    "category": "COMFORT SERIES",
+    "price": 240,
+    "description": "Premium comfort shoes designed for everyday performance.",
+    "image": "assets/images/Aura Cloud.png",
+    "rating": 4.8,
+    "reviews": 180,
+    "colors": ["white", "blue"]
+  },
+  {
+    "id": 4,
+    "name": "APEX TERRAIN V2",
+    "category": "PRO TRIAL SERIES",
+    "price": 225,
+    "description": "Engineered for the most demanding landscapes with excellent traction on any surface.",
+    "image": "assets/images/Apex Terrain V2.png",
+    "rating": 4.9,
+    "reviews": 200,
+    "colors": ["black", "red"]
+  }
+]
