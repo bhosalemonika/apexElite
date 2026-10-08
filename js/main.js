@@ -3,12 +3,29 @@ function loadFile(file, id, callback) {
   if (!element) {
     return;
   }
+
   fetch(file)
-    .then((response) => response.text())
-    .then((data) => {
+    .then(function(response) {
+      return response.text();
+    })
+    .then(function(data) {
       element.innerHTML = data;
       if (callback) {
         callback();
+      }
+     if (id === "header") {
+
+        let menuBtn = element.querySelector("#menuBtn");
+        let navLinks = element.querySelector("#navLinks");
+
+        if (menuBtn && navLinks) {
+          menuBtn.addEventListener("click", function() {
+
+            let isOpen = navLinks.classList.toggle("show");
+            menuBtn.setAttribute("aria-expanded", isOpen);
+
+          });
+        }
       }
     });
 }
@@ -26,7 +43,7 @@ fetch("product.json")
     loadFile("home.html", "home", showProducts);
     showAllProducts();
     if (typeof showCart === "function") {
-      showCart();
+      showCart ();
     }
     showProductDetails();
     showRecommendedProducts();

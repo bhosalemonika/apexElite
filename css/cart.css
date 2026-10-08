@@ -48,13 +48,16 @@ body {
     gap: 7px;
 }
 .item {
-    height: 194px;
+    min-height: 194px;
+    height: auto;
     background: #101318;
     border: 1px solid #24282d;
     border-radius: 5px;
     padding: 18px;
     display: flex;
     gap: 30px;
+    box-sizing: border-box;
+    align-items: flex-start;
 }
 
 .item img {
@@ -133,14 +136,16 @@ body {
 
 
 #summary {
-    height: 393px;
+    min-height: 393px;
+    height: auto;
     background: #101318;
     border: 1px solid #25282d;
     border-radius: 5px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap:8px
+    gap: 8px;
+    box-sizing: border-box;
 }
 
 #summary h3 {
@@ -170,7 +175,7 @@ body {
 
 .promo {
     display: flex;
-    height: 17px;
+    height: 36px;
     margin-bottom: 10px;
 }
 
@@ -179,18 +184,23 @@ body {
     background: #11151a;
     border: 1px solid #292d32;
     border-radius: 3px 0 0 3px;
-    padding: 9px;
+    padding: 8px 10px;
     color: white;
     font-size: 11px;
+    box-sizing: border-box;
+    height: 100%;
 }
 
 .promo button {
-    width: 51px;
+    width: 58px;
+    min-width: 58px;
     background: #d7b62d;
     border: none;
     border-radius: 0 3px 3px 0;
     font-size: 10px;
     font-weight: bold;
+    height: 100%;
+    cursor: pointer;
 }
 
 
@@ -215,15 +225,17 @@ body {
 
 .checkout {
     width: 100%;
-    height: 31px;
+    min-height: 40px;
     background: #e52d2d;
     color: white;
     border: none;
     border-radius: 3px;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: bold;
-    padding: 10px;
+    padding: 10px 12px;
     margin-bottom: 8px;
+    cursor: pointer;
+    line-height: 1.2;
 }
 
 .continue {
@@ -236,7 +248,12 @@ body {
     border-radius: 3px;
     font-size: 13px;
     padding: 10px;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .pay {
@@ -291,14 +308,20 @@ body {
 
 .card div {
     width: 100%;
-    height: 200px;
+    height: 180px;
     overflow: hidden;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0e1116;
 }
 
 .card img {
     width: 100%;
-    height: 70%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
     display: block;
 }
@@ -321,9 +344,10 @@ body {
     background: #171b21;
     display: grid;
     grid-template-columns: 1.4fr 1fr 1fr 1.5fr;
-    gap: 138px;
-    padding-left: 120px;
-    padding-right: 120px;
+    gap: 40px;
+    padding: 40px 5%;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 #foot h3 {
@@ -362,24 +386,36 @@ body {
 
 .email {
     display: flex;
-    height: 20px;
+    height: 36px;
     margin-top: 7px;
+    width: 100%;
+    max-width: 240px;
 }
 
 .email input {
-    width: 100%;
+    flex: 1;
+    min-width: 0;
     background: #11151a;
     border: 1px solid #292d32;
-    padding: 10px;
-    width: 140px;
+    padding: 8px 10px;
     color: white;
-    font-size: 10px;
+    font-size: 11px;
+    box-sizing: border-box;
+    height: 100%;
+    border-radius: 3px 0 0 3px;
 }
 
 .email button {
-    width: 30px;
+    min-width: 44px;
+    width: 44px;
+    height: 100%;
+    background: #d7b62d;
+    color: #080808;
     border: none;
-    font-size: 7px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
 }
 .footer-bottom p {
     color: #555555;
@@ -388,44 +424,440 @@ body {
 }
 
 
-@media (max-width: 600px) {
+body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
 
-    #nav {
-        padding: 0 10px;
-    }
+#main {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
 
-    .links {
-        margin-left: 20px;
-        gap: 8px;
-    }
-
+@media (max-width: 1024px) {
     #main {
-        padding: 15px 12px 0;
+        padding: 18px 3% 0;
     }
+    .title h1 {
+        font-size: 18px;
+    }
+    #cart {
+        grid-template-columns: 1.4fr 1fr;
+        gap: 14px;
+    }
+    .item {
+        gap: 20px;
+        padding: 15px;
+    }
+    .item img {
+        width: 130px;
+        height: 130px;
+        flex-shrink: 0;
+    }
+    .info h3 {
+        font-size: 14px;
+    }
+    .info p {
+        font-size: 11px;
+    }
+    .details {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    .details b {
+        font-size: 15px;
+        padding: 5px 6px;
+    }
+    .item > strong {
+        font-size: 14px;
+    }
+    .remove {
+        font-size: 12px;
+    }
+    #summary {
+        padding: 18px;
+    }
+    #summary h3 {
+        font-size: 17px;
+    }
+    .row {
+        font-size: 13px;
+    }
+    .total span {
+        font-size: 11px;
+    }
+    .total b {
+        font-size: 14px;
+    }
+    .checkout {
+        min-height: 38px;
+        font-size: 10px;
+    }
+    .continue {
+        font-size: 12px;
+        height: 38px;
+        margin-top: 12px;
+    }
+    #like {
+        margin-top: 65px;
+    }
+    .like-title h3 {
+        font-size: 18px;
+    }
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+    }
+    .card {
+        padding: 12px;
+    }
+    .card div {
+        height: 150px;
+    }
+    .card h4 {
+        font-size: 12px;
+    }
+    .card p {
+        font-size: 14px;
+    }
+    #foot {
+        grid-template-columns: 1.4fr 1fr 1fr 1.5fr;
+        gap: 30px;
+        padding: 35px 4%;
+    }
+    #foot h3 {
+        font-size: 19px;
+    }
+    #foot h4 {
+        font-size: 17px;
+    }
+    #foot p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+    #des {
+        font-size: 13px;
+        width: 100%;
+        max-width: 200px;
+    }
+}
 
+@media (max-width: 768px) {
+    #main {
+        padding: 15px 16px 0;
+    }
+    .bread {
+        font-size: 12px;
+    }
+    .title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        margin-bottom: 16px;
+    }
+    .title h1 {
+        font-size: 20px;
+    }
+    .title span {
+        font-size: 11px;
+    }
     #cart {
         grid-template-columns: 1fr;
+        gap: 18px;
     }
-
+    .item {
+        gap: 16px;
+        padding: 14px;
+        min-height: auto;
+    }
+    .item img {
+        width: 110px;
+        height: 110px;
+    }
+    .info h3 {
+        font-size: 14px;
+    }
+    .info p {
+        font-size: 11px;
+    }
+    .details {
+        gap: 14px;
+    }
+    .details b {
+        font-size: 15px;
+    }
+    .item > strong {
+        font-size: 14px;
+        padding-top: 0;
+    }
+    .remove {
+        font-size: 12px;
+        margin-top: 8px;
+    }
     #summary {
-        height: auto;
+        padding: 18px 16px;
+        min-height: auto;
     }
-
+    #summary h3 {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+    .row {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+    .total {
+        margin: 12px 0 10px;
+    }
+    .total span {
+        font-size: 12px;
+    }
+    .total b {
+        font-size: 15px;
+    }
+    .promo {
+        height: 38px;
+    }
+    .checkout {
+        min-height: 42px;
+        font-size: 11px;
+    }
+    .continue {
+        height: 40px;
+        font-size: 12px;
+        margin-top: 14px;
+    }
+    .pay {
+        margin-top: 10px;
+    }
     #like {
-        margin-top: 50px;
+        margin-top: 55px;
     }
-
+    .like-title {
+        margin-bottom: 14px;
+    }
+    .like-title h3 {
+        font-size: 17px;
+    }
+    .like-title button {
+        width: 26px;
+        height: 26px;
+        font-size: 14px;
+    }
+    .arrows {
+        gap: 6px;
+        font-size: 22px;
+    }
     .cards {
         grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
-
+    .card {
+        padding: 12px;
+    }
+    .card div {
+        height: 160px;
+    }
+    .card h4 {
+        font-size: 12px;
+        margin-top: 8px;
+    }
+    .card p {
+        font-size: 14px;
+        margin-top: 8px;
+    }
     #foot {
         grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        padding: 35px 5%;
     }
+    #foot > div:first-child {
+        grid-column: 1 / -1;
+    }
+    #foot h3 {
+        font-size: 18px;
+    }
+    #foot h4 {
+        font-size: 15px;
+    }
+    #foot p {
+        font-size: 12px;
+    }
+    #des {
+        font-size: 12px;
+        max-width: 100%;
+    }
+    .social {
+        font-size: 14px;
+        margin-top: 8px;
+    }
+    .email {
+        height: 38px;
+        max-width: 280px;
+    }
+}
 
-    .item img{
-        width:90px;
-        height:90px;
-        flex-shrink:0;
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+    #main {
+        padding: 12px 12px 0;
+    }
+    .bread {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+    .title h1 {
+        font-size: 18px;
+    }
+    .title span {
+        font-size: 11px;
+    }
+    #cart {
+        gap: 14px;
+    }
+    .item {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px;
+        align-items: stretch;
+    }
+    .item img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        align-self: center;
+    }
+    .info {
+        padding: 0;
+    }
+    .info h3 {
+        font-size: 14px;
+    }
+    .info p {
+        font-size: 11px;
+    }
+    .details {
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .details div {
+        flex: 1;
+        min-width: 80px;
+    }
+    .details small {
+        font-size: 9px;
+        margin-top: 0;
+    }
+    .details b {
+        font-size: 14px;
+        padding: 5px 6px;
+    }
+    .item > strong {
+        font-size: 14px;
+        align-self: flex-end;
+        order: 1;
+    }
+    .remove {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    #summary {
+        padding: 16px 14px;
+    }
+    #summary h3 {
+        font-size: 16px;
+    }
+    .row {
+        font-size: 12px;
+    }
+    .promo {
+        height: 40px;
+    }
+    .promo input {
+        font-size: 12px;
+    }
+    .promo button {
+        width: 60px;
+        min-width: 60px;
+        font-size: 11px;
+    }
+    .total span {
+        font-size: 12px;
+    }
+    .total b {
+        font-size: 16px;
+    }
+    .checkout {
+        min-height: 44px;
+        font-size: 11px;
+    }
+    .continue {
+        height: 42px;
+        font-size: 11px;
+    }
+    #like {
+        margin-top: 45px;
+    }
+    .like-title h3 {
+        font-size: 16px;
+    }
+    .like-title button {
+        width: 28px;
+        height: 28px;
+    }
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    .card div {
+        height: 200px;
+    }
+    .card h4 {
+        font-size: 13px;
+    }
+    .card p {
+        font-size: 15px;
+    }
+    #foot {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 35px 20px;
+    }
+    #foot > div:first-child {
+        grid-column: auto;
+    }
+    #foot h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    #foot h4 {
+        font-size: 14px;
+    }
+    #foot p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+    #des {
+        font-size: 12px;
+    }
+    .social {
+        font-size: 16px;
+    }
+    .email {
+        height: 40px;
+        max-width: 100%;
+    }
+    .email input {
+        font-size: 12px;
+    }
+    .email button {
+        width: 50px;
+        min-width: 50px;
+        font-size: 11px;
     }
 }

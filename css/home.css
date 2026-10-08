@@ -11,6 +11,9 @@ body {
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 a {
     text-decoration: none;
@@ -310,8 +313,7 @@ section {
 /* Product card */
 .product-card {
     overflow: hidden;
-    width: 800px;
-    margin: 40px;
+    width: 100%;
     background: #121519;
     border: 1px solid #24282c;
     transition:
@@ -612,11 +614,70 @@ section {
     font-size: 14px;
     line-height: 1.7;
 }
-@media (max-width: 900px) {
+#products-head {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+@media (max-width: 1024px) {
+    #products-head {
+        font-size: 26px;
+        margin-left: 24px;
+    }
+    .hero {
+        min-height: 380px;
+    }
+    .hero h1 {
+        font-size: 40px;
+    }
+    .hero-description {
+        font-size: 15px;
+    }
+    .featured-section {
+        padding: 55px 4%;
+    }
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+    .product-image {
+        height: 240px;
+    }
+    .section-header h2,
+    .section-heading h2 {
+        font-size: 26px;
+    }
+    .section-heading > p:last-child {
+        font-size: 16px;
+    }
+    .excellence-section {
+        padding: 55px 4%;
+    }
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .feature-card {
+        padding: 22px 18px;
+        min-height: 170px;
+    }
+    .feature-card p {
+        font-size: 13px;
+    }
+    .aurum-section {
+        padding: 55px 5%;
+        min-height: 340px;
+    }
+    .aurum-content h2 {
+        font-size: 54px;
+    }
     .legacy-section {
         grid-template-columns: 1fr;
         gap: 60px;
         padding: 60px 5%;
+        min-height: auto;
     }
     .legacy-image-container {
         max-width: 500px;
@@ -627,29 +688,129 @@ section {
         padding-right: 0;
     }
 }
-@media (max-width: 600px) {
+
+@media (max-width: 768px) {
+    #products-head {
+        font-size: 22px;
+        margin-left: 16px;
+        margin-top: 16px;
+    }
+    .hero {
+        min-height: 400px;
+    }
+    .hero h1 {
+        font-size: 34px;
+        letter-spacing: -1.5px;
+    }
+    .hero-description {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        padding: 0 20px;
+    }
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 260px;
+    }
+    .hero-content {
+        padding: 70px 15px 35px;
+    }
+    .featured-section {
+        padding: 45px 20px;
+    }
+    .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .section-header h2,
+    .section-heading h2 {
+        font-size: 22px;
+    }
+    .section-label {
+        font-size: 13px;
+    }
+    .section-heading > p:last-child {
+        font-size: 14px;
+    }
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+    .product-image {
+        height: 200px;
+    }
+    .product-details {
+        padding: 14px;
+    }
+    .product-top h3 {
+        font-size: 15px;
+    }
+    .price {
+        font-size: 15px;
+    }
+    .excellence-section {
+        padding: 45px 20px;
+    }
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .feature-card {
+        padding: 18px 14px;
+        min-height: 160px;
+    }
+    .feature-card h3 {
+        font-size: 13px;
+    }
+    .feature-card p {
+        font-size: 12px;
+    }
+    .feature-card img {
+        width: 26px;
+        height: 26px;
+        margin-bottom: 14px;
+    }
+    .aurum-section {
+        min-height: 380px;
+        padding: 45px 25px;
+        background-position: center;
+    }
+    .aurum-content h2 {
+        font-size: 46px;
+    }
+    .aurum-content p {
+        font-size: 14px;
+    }
     .legacy-section {
         padding: 50px 20px;
         gap: 50px;
     }
     .legacy-image {
-        height: 400px;
+        height: 420px;
         border-radius: 10px;
+    }
+    .legacy-image img {
+        height: 100%;
     }
     .innovation-badge {
         right: -10px;
         bottom: -20px;
-        width: 150px;
-        height: 115px;
+        width: 160px;
+        height: 120px;
     }
     .innovation-badge h3 {
-        font-size: 45px;
+        font-size: 46px;
     }
     .innovation-badge p {
-        font-size: 7px;
+        font-size: 8px;
     }
     .legacy-content > h2 {
-        font-size: 35px;
+        font-size: 32px;
         margin-bottom: 35px;
     }
     .timeline {
@@ -658,115 +819,132 @@ section {
     .timeline-dot {
         left: -27px;
     }
+    .timeline-item {
+        min-height: 90px;
+        padding-bottom: 24px;
+    }
     .timeline-text h3 {
-        font-size: 11px;
+        font-size: 15px;
     }
     .timeline-text p {
-        font-size: 9px;
+        font-size: 12px;
+    }
+    .btn-primary,
+    .btn-secondary {
+        font-size: 12px;
+        padding: 11px 20px;
     }
 }
 
-
-@media (max-width: 900px) {
-    .navbar {
-        padding: 0 18px;
+@media (max-width: 480px) {
+    #products-head {
+        font-size: 20px;
+        margin-left: 12px;
+        margin-top: 12px;
     }
-    .nav-links {
-        gap: 15px;
-        margin-left: 20px;
-    }
-    .product-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-    .features-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-    .footer-container {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-}
-@media (max-width: 650px) {
-
-    .navbar {
-        height: 55px;
-        padding: 0 15px;
-    }
-    .nav-links {
-        display: none;
-    }
-    .nav-actions {
-        gap: 9px;
-    }
-
     .hero {
-        min-height: 430px;
+        min-height: 420px;
     }
     .hero h1 {
-        font-size: 38px;
-        letter-spacing: -1.5px;
+        font-size: 28px;
+        letter-spacing: -1px;
     }
     .hero-description {
-        font-size: 9px;
+        font-size: 13px;
+        line-height: 1.6;
     }
     .hero-buttons {
-        flex-direction: column;
-        width: 100%;
+        padding: 0 10px;
     }
     .hero-buttons .btn {
-        width: 180px;
+        max-width: 100%;
     }
-
+    .hero-content {
+        padding: 60px 12px 30px;
+    }
     .featured-section {
-        padding: 45px 15px;
-    }
-    .section-header {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 10px;
+        padding: 35px 14px;
     }
     .section-header h2,
     .section-heading h2 {
-        font-size: 20px;
+        font-size: 19px;
+    }
+    .section-label {
+        font-size: 11px;
+    }
+    .section-heading > p:last-child {
+        font-size: 13px;
+    }
+    .view-all {
+        font-size: 12px;
     }
     .product-grid {
         grid-template-columns: 1fr;
+        gap: 14px;
     }
     .product-image {
-        height: 250px;
+        height: 240px;
     }
-
     .excellence-section {
-        padding: 45px 15px;
+        padding: 35px 14px;
     }
     .features-grid {
         grid-template-columns: 1fr;
+        gap: 10px;
     }
-
+    .feature-card {
+        min-height: 140px;
+        padding: 16px 14px;
+    }
     .aurum-section {
-        min-height: 420px;
-        padding: 40px 25px;
-        background-position: center;
+        min-height: 400px;
+        padding: 35px 18px;
     }
     .aurum-content h2 {
-        font-size: 48px;
+        font-size: 40px;
     }
-
+    .aurum-content p {
+        font-size: 13px;
+    }
     .legacy-section {
-        grid-template-columns: 1fr;
+        padding: 40px 14px;
+        gap: 45px;
     }
     .legacy-image {
-        min-height: 300px;
+        height: 340px;
     }
-    .legacy-content {
-        padding: 45px 25px;
+    .innovation-badge {
+        right: -8px;
+        bottom: -18px;
+        width: 140px;
+        height: 105px;
     }
-
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 40px 20px;
+    .innovation-badge h3 {
+        font-size: 40px;
+    }
+    .innovation-badge p {
+        font-size: 7px;
+    }
+    .legacy-content > h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    .timeline {
+        padding-left: 28px;
+    }
+    .timeline-dot {
+        left: -25px;
+        width: 9px;
+        height: 9px;
+    }
+    .timeline-item {
+        min-height: 80px;
+        padding-bottom: 20px;
+    }
+    .timeline-text h3 {
+        font-size: 13px;
+    }
+    .timeline-text p {
+        font-size: 11px;
     }
 }
